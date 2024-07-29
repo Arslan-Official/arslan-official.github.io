@@ -261,11 +261,6 @@ span{
 		text-align: center;
 		margin: 5rem 0;
 	}
-	.showcase{
-		font-size: 8rem;
-		text-align: center;
-		margin: -83rem;
-	}
 	.education{
 		padding: 100px 15px;
 		background: var(--second-bg-color);
