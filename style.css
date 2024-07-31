@@ -261,6 +261,16 @@ span{
 		text-align: center;
 		margin: 5rem 0;
 	}
+	.heading2{
+		font-size: 8rem;
+		text-align: center;
+		margin: 5rem 0;
+	}
+	.heading3{
+		font-size: 8rem;
+		text-align: center;
+		margin: 5rem 0;
+	}
 	.education{
 		padding: 100px 15px;
 		background: var(--second-bg-color);
@@ -565,6 +575,16 @@ span{
 			grid-template-columns: repeat(2,1fr);
 			margin: 0 5rem;
 		}
+		.heading2{
+		font-size: 6.6rem;
+		text-align: center;
+		margin: 5rem 0;
+	}
+	    .heading3{
+		font-size: 7rem;
+		text-align: center;
+		margin: 5rem 0;
+	    }
 	}
 	@media(max-width:991px){
 		header{
