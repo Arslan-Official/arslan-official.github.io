@@ -216,15 +216,15 @@ span{
 	}
 	21%,
 	40%{
-		content: "Video Editor";
+		content: "CybSec Expert";
 	}
 	41%,
 	60%{
-		content: "Freelancer";
+		content: "Video Editor";
 	}
 	61%,
 	80%{
-		content: "CybSec Expert";
+		content: "Freelancer";
 	}
 	81%,
 	100%{
@@ -361,35 +361,40 @@ span{
 		background-color: var(--bg-color);
 		width: 50px;
 	}
-	.editing{
+	
+	.skills{
 		background: var(--bg-color);
 		color: black;
 	}
-	.editing h2{
+	.skills h2{
 		margin-bottom: 5rem;
 		color: white;
 	}
-	.editing-container{
+	.skills-container{
 		display: grid;
 		grid-template-columns: repeat(2,1fr);
 		align-items: center;
-		gap: 2.5rem;
+		gap: 6rem;
 	}
-	.editing-box{
+	.skills-box{
+		text-decoration: none;
+		color: inherit;
 		background-color: var(--main-color);
-		height: 300px;
+		border: 3px solid var(--main-color);
+		box-shadow: 0 0 30px var(--main-color);
+		height: 500px;
 		border-radius: 3rem;
 		border: 5px solid transparent;
 		cursor: pointer;
 		transition: 0.4s ease-in-out;
 	}
-	.editing-box:hover{
+	.skills-box:hover{
 		background: white;
 		color: black;
 		border: 5px solid var(--main-color);
 		transform: scale(1.03);
 	}
-	.editing-box .editing-info{
+	.skills-box .skills-info{
 		display: flex;
 		flex-direction: column;
 		text-align: left;
@@ -398,13 +403,13 @@ span{
 		align-items: baseline;
 		padding: 5rem 5rem;
 	}
-	.editing-info h4{
+	.skills-info h4{
 		font-size: 3rem;
 		font-weight: 800;
 		line-height: 2;
 	}
-	.editing-info p{
-		font-size: 1.6rem;
+	.skills-info p{
+		font-size: 1.8rem;
 		font-weight: 600;
 		max-height: 100px;
 		line-height: 1.7;
@@ -570,7 +575,7 @@ span{
 		html{
 			font-size: 55%;
 		}
-		.editing-container{
+		.skills-container{
 			padding-bottom: 7rem;
 			grid-template-columns: repeat(2,1fr);
 			margin: 0 5rem;
@@ -607,7 +612,7 @@ span{
 		.timeline-dot{
 			left: 0;
 		}
-		.editing{
+		.skills{
 			padding-bottom: 7rem;
 		}
 		.testimonials .wrapper{
@@ -621,6 +626,18 @@ span{
 		}
 	}
 	@media(max-width:895px){
+		.skills-info h4{
+		font-size: 2.5rem;
+		font-weight: 800;
+		line-height: 2;
+	}
+	.skills-info p{
+		font-size: 1.3rem;
+		font-weight: 600;
+		max-height: 100px;
+		line-height: 1.7;
+		margin: auto;
+	}
 		#menu-icon{
 			display: block;
 		}
@@ -664,10 +681,10 @@ span{
 		.home-img img{
 			width: 56vw;
 		}
-		.editing h2{
-			margin-bottom: 3rem;
+		.skills h2{
+			margin-bottom: 5rem;
 		}
-		.editing-container{
+		.skills-container{
 			grid-template-columns: repeat(1,1fr);
 		}
 	}
