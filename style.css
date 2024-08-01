@@ -212,23 +212,23 @@ span{
 @keyframes words{
 	0%,
 	20%{
-		content: "Content Creator";
+		content: "CybSec Expert";
 	}
 	21%,
 	40%{
-		content: "CybSec Expert";
+		content: "AI Specialist";
 	}
 	41%,
 	60%{
-		content: "Video Editor";
+		content: "Content Creator";
 	}
 	61%,
 	80%{
-		content: "Freelancer";
+		content: "Video Editor";
 	}
 	81%,
 	100%{
-		content: "Influencer";
+		content: "Freelancer";
 	}
 }
 @keyframes typing{
@@ -375,6 +375,12 @@ span{
 		grid-template-columns: repeat(2,1fr);
 		align-items: center;
 		gap: 6rem;
+	}
+	.skills-container2{
+		display: flex;
+		margin-top: 4rem;
+		width: 680px;
+		transform: translate(55%, 0%);
 	}
 	.skills-box{
 		text-decoration: none;
@@ -570,7 +576,6 @@ span{
 		font-size: 16px;
 		color: white;
 	}
-	
 	@media(max-width:1285px){
 		html{
 			font-size: 55%;
@@ -579,6 +584,13 @@ span{
 			padding-bottom: 7rem;
 			grid-template-columns: repeat(2,1fr);
 			margin: 0 5rem;
+		}
+		.skills-container2{
+			padding-bottom: 7rem;
+			grid-template-columns: repeat(1,1fr);
+			margin: 0 5rem;
+			width: 78%;
+			transform: translate(0%, 0%);
 		}
 		.heading2{
 		font-size: 6.6rem;
@@ -616,7 +628,7 @@ span{
 			padding-bottom: 7rem;
 		}
 		.testimonials .wrapper{
-			grid-template-columns: repeat(1,1fr);
+			grid-template-columns: repeat(1, 1fr);
 		}
 		.contact form{
 			flex-direction: column;
@@ -685,6 +697,9 @@ span{
 			margin-bottom: 5rem;
 		}
 		.skills-container{
+			grid-template-columns: repeat(1,1fr);
+		}
+		.skills-container2{
 			grid-template-columns: repeat(1,1fr);
 		}
 	}
