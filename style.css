@@ -126,6 +126,12 @@ span{
 	line-height: 1.8;
 	max-width: 1000px;
 }
+.icon{
+	fill: #00ffee;
+}
+.icon:hover{
+	fill: #ffffff;
+}
 .social-icons a{
     display: inline-flex;
     justify-content: center;
@@ -366,6 +372,13 @@ span{
 		background: var(--bg-color);
 		color: black;
 	}
+	.para{
+		font-size: 1.5rem;
+		color: white;
+		text-align: center;
+		padding-top: 14rem;
+		padding-bottom: 2rem;
+	}
 	.skills h2{
 		margin-bottom: 5rem;
 		color: white;
@@ -377,10 +390,9 @@ span{
 		gap: 6rem;
 	}
 	.skills-container2{
-		display: flex;
-		margin-top: 4rem;
-		width: 680px;
-		transform: translate(55%, 0%);
+		display: grid;
+		margin-top: 6rem;
+		grid-template-columns: repeat(1,1fr);
 	}
 	.skills-box{
 		text-decoration: none;
@@ -486,10 +498,11 @@ span{
 		color: white;
 	}
 	.contact p{
-		font-size: 1.4rem;
+		font-size: 1.5rem;
 		color: white;
 		text-align: center;
-		padding: 12rem;
+		padding-top: 10rem;
+		padding-bottom: 5rem;
 	}
 	.contact form{
 		display: flex;
@@ -576,9 +589,62 @@ span{
 		font-size: 16px;
 		color: white;
 	}
+	
+	
+	@media(min-width:1589px) and (max-width:3000px){
+		.skills-info h4{
+			font-size: 3rem;
+		}
+		.skills-info p{
+		    font-size: 1.8rem;
+		}
+		.skills-container2{
+			grid-template-columns: repeat(1,1fr);
+			padding-left: 319px;
+			padding-right: 319px;
+			padding-bottom: 0px;
+		}
+	}
+	
+	@media(min-width:1452px) and (max-width:1588px){
+		.skills-info h4{
+			font-size: 2.8rem;
+		}
+		.skills-info p{
+		    font-size: 1.7rem;
+		}
+		.skills-container2{
+			grid-template-columns: repeat(1,1fr);
+			padding-left: 258.75px;
+			padding-right: 258.75px;
+			padding-bottom: 0px;
+		}
+	}
+	
+	@media(min-width:1286px) and (max-width:1451px){
+		.skills-info h4{
+			font-size: 2.7rem;
+		}
+		.skills-info p{
+		    font-size: 1.58rem;
+		}
+		.skills-container2{
+			grid-template-columns: repeat(1,1fr);
+			padding-left: 258.75px;
+			padding-right: 258.75px;
+			padding-bottom: 0px;
+		}
+	}
+	
 	@media(max-width:1285px){
 		html{
 			font-size: 55%;
+		}
+		.skills-info h4{
+			font-size: 2.7rem;
+		}
+		.skills-info p{
+		    font-size: 1.58rem;
 		}
 		.skills-container{
 			padding-bottom: 7rem;
@@ -586,11 +652,11 @@ span{
 			margin: 0 5rem;
 		}
 		.skills-container2{
-			padding-bottom: 7rem;
+			padding-bottom: 0rem;
 			grid-template-columns: repeat(1,1fr);
 			margin: 0 5rem;
-			width: 78%;
-			transform: translate(0%, 0%);
+			padding-left: 179.68px;
+			padding-right: 179.68px;
 		}
 		.heading2{
 		font-size: 6.6rem;
@@ -603,7 +669,128 @@ span{
 		margin: 5rem 0;
 	    }
 	}
+	
+	
+	@media(min-width:1218px) and (max-width:1284px){
+		.skills-info h4{
+			font-size: 2.7rem;
+		}
+		.skills-info p{
+		    font-size: 1.58rem;
+		}
+		.skills-container2{
+			grid-template-columns: repeat(1,1fr);
+			padding-left: 179.68px;
+			padding-right: 179.68px;
+			padding-bottom: 0px;
+		}
+	}
+	
+	@media(min-width:1148px) and (max-width:1217px){
+		.skills-info h4{
+			font-size: 2.6rem;
+		}
+		.skills-info p{
+		    font-size: 1.5rem;
+		}
+		.skills-container2{
+			grid-template-columns: repeat(1,1fr);
+			padding-left: 179.68px;
+			padding-right: 179.68px;
+			padding-bottom: 0px;
+		}
+	}
+	
+	@media(min-width:1092px) and (max-width:1147px){
+		.skills-info h4{
+			font-size: 2.6rem;
+		}
+		.skills-info p{
+		    font-size: 1.44rem;
+		}
+		.skills-container2{
+			grid-template-columns: repeat(1,1fr);
+			padding-left: 179.68px;
+			padding-right: 179.68px;
+			padding-bottom: 0px;
+		}
+	}
+	
+	@media(min-width:1067px) and (max-width:1091px){
+		.skills-info h4{
+			font-size: 2.6rem;
+		}
+		.skills-info p{
+		    font-size: 1.36rem;
+		}
+		.skills-container2{
+			grid-template-columns: repeat(1,1fr);
+			padding-left: 179.68px;
+			padding-right: 179.68px;
+			padding-bottom: 0px;
+		}
+	}
+	
+	@media(min-width:1053px) and (max-width:1066px){
+		.skills-info h4{
+			font-size: 2.45rem;
+		}
+		.skills-info p{
+		    font-size: 1.35rem;
+		}
+		.skills-container2{
+			grid-template-columns: repeat(1,1fr);
+			padding-left: 179.68px;
+			padding-right: 179.68px;
+			padding-bottom: 0px;
+		}
+	}
+	
+	@media(min-width:1041px) and (max-width:1052px){
+		.skills-info h4{
+			font-size: 2.4rem;
+		}
+		.skills-info p{
+		    font-size: 1.32rem;
+		}
+		.skills-container2{
+			grid-template-columns: repeat(1,1fr);
+			padding-left: 179.68px;
+			padding-right: 179.68px;
+			padding-bottom: 0px;
+		}
+	}
+	
+	@media(min-width:992px) and (max-width:1040px){
+		.skills-info h4{
+			font-size: 2.4rem;
+		}
+		.skills-info p{
+		    font-size: 1.32rem;
+		}
+		.skills-container2{
+			grid-template-columns: repeat(1,1fr);
+			padding-left: 179.68px;
+			padding-right: 179.68px;
+			padding-bottom: 0px;
+		}
+	}
+	
 	@media(max-width:991px){
+	.skills-container{
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
+		align-items: center;
+	}
+	.skills-container2{
+		display: grid;
+		margin-top: 0rem;
+		grid-template-columns: repeat(1,1fr);
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
 		header{
 			padding: 2rem 3%;
 		}
@@ -637,14 +824,32 @@ span{
 			padding: 2rem 3%;
 		}
 	}
-	@media(max-width:895px){
+	
+	
+	@media(min-width:900px) and (max-width:991px){
 		.skills-info h4{
-		font-size: 2.5rem;
+			font-size: 2.5rem;
+		}
+		.skills-info p{
+		    font-size: 1.4rem;
+		}
+		.skills-container2{
+			grid-template-columns: repeat(1,1fr);
+			padding-left: 219px;
+			padding-right: 219px;
+			padding-bottom: 0px;
+		}
+	}
+	
+	
+	@media(max-width:899px){
+		.skills-info h4{
+		font-size: 3.5rem;
 		font-weight: 800;
 		line-height: 2;
 	}
 	.skills-info p{
-		font-size: 1.3rem;
+		font-size: 2.1rem;
 		font-weight: 600;
 		max-height: 100px;
 		line-height: 1.7;
@@ -701,5 +906,335 @@ span{
 		}
 		.skills-container2{
 			grid-template-columns: repeat(1,1fr);
+		}
+	}
+	
+	
+	@media(max-width:780px){
+		.skills-info h4{
+			font-size: 3.45rem;
+		}
+		.skills-info p{
+		    font-size: 2.05rem;
+		}
+	}
+	
+	
+	@media(max-width:744px){
+		.skills-info h4{
+			font-size: 3.4rem;
+		}
+		.skills-info p{
+		    font-size: 2.0rem;
+		}
+	}
+	
+	
+		@media(max-width:731px){
+		.skills-info h4{
+			font-size: 3.35rem;
+		}
+		.skills-info p{
+		    font-size: 1.95rem;
+		}
+	}
+	
+	
+		@media(max-width:678px){
+		.skills-info h4{
+			font-size: 3.3rem;
+		}
+		.skills-info p{
+		    font-size: 1.9rem;
+		}
+	}
+	
+	
+		@media(max-width:666px){
+		.skills-info h4{
+			font-size: 3.25rem;
+		}
+		.skills-info p{
+		    font-size: 1.85rem;
+		}
+	}
+	
+	
+		@media(max-width:655px){
+		.skills-info h4{
+			font-size: 3.2rem;
+		}
+		.skills-info p{
+		    font-size: 1.8rem;
+		}
+	}
+	
+	
+		@media(max-width:608px){
+		.skills-info h4{
+			font-size: 3.15rem;
+		}
+		.skills-info p{
+		    font-size: 1.75rem;
+		}
+	}
+	
+	
+		@media(max-width:562px){
+		.skills-info h4{
+			font-size: 3.1rem;
+		}
+		.skills-info p{
+		    font-size: 1.7rem;
+		}
+	}
+	
+	
+		@media(max-width:551px){
+		.skills-info h4{
+			font-size: 3.05rem;
+		}
+		.skills-info p{
+		    font-size: 1.65rem;
+		}
+	}
+	
+	
+		@media(max-width:536px){
+		.skills-info h4{
+			font-size: 3.0rem;
+		}
+		.skills-info p{
+		    font-size: 1.6rem;
+		}
+	}
+	
+	
+		@media(max-width:526px){
+		.skills-info h4{
+			font-size: 2.95rem;
+		}
+		.skills-info p{
+		    font-size: 1.55rem;
+		}
+	}
+	
+	
+		@media(max-width:504px){
+		.skills-info h4{
+			font-size: 2.9rem;
+		}
+		.skills-info p{
+		    font-size: 1.5rem;
+		}
+	}
+	
+	
+		@media(max-width:493px){
+		.skills-info h4{
+			font-size: 2.85rem;
+		}
+		.skills-info p{
+		    font-size: 1.45rem;
+		}
+	}
+	
+	
+		@media(max-width:446px){
+		.skills-info h4{
+			font-size: 2.8rem;
+		}
+		.skills-info p{
+		    font-size: 1.4rem;
+		}
+	}
+	
+	
+		@media(max-width:436px){
+		.skills-info h4{
+			font-size: 2.75rem;
+		}
+		.skills-info p{
+		    font-size: 1.35rem;
+		}
+	}
+	
+	
+		@media(max-width:428px){
+		.skills-info h4{
+			font-size: 2.71rem;
+		}
+		.skills-info p{
+		    font-size: 1.31rem;
+		}
+	}
+	
+	
+		@media(max-width:407px){
+		.skills-info h4{
+			font-size: 2.66rem;
+		}
+		.skills-info p{
+		    font-size: 1.29rem;
+		}
+	}
+	
+	
+		@media(max-width:399px){
+		.skills-info h4{
+			font-size: 2.63rem;
+		}
+		.skills-info p{
+		    font-size: 1.25rem;
+		}
+	}
+	
+	
+		@media(max-width:397px){
+		.skills-info h4{
+			font-size: 2.55rem;
+		}
+		.skills-info p{
+		    font-size: 1.23rem;
+		}
+	}
+	
+	
+		@media(max-width:391px){
+		.skills-info h4{
+			font-size: 2.54rem;
+		}
+		.skills-info p{
+		    font-size: 1.21rem;
+		}
+	}
+	
+	
+		@media(max-width:390px){
+		.skills-info h4{
+			font-size: 2.5rem;
+		}
+		.skills-info p{
+		    font-size: 1.20rem;
+		}
+	}
+	
+	
+		@media(max-width:387px){
+		.skills-info h4{
+			font-size: 2.3rem;
+		}
+		.skills-info p{
+		    font-size: 1.20rem;
+		}
+	}
+	
+	
+		@media(max-width:379px){
+		.skills-info h4{
+			font-size: 2.1rem;
+		}
+		.skills-info p{
+		    font-size: 1.18rem;
+		}
+	}
+	
+	
+		@media(max-width:375px){
+		.skills-info h4{
+			font-size: 1.9rem;
+		}
+		.skills-info p{
+		    font-size: 1.18rem;
+		}
+	}
+	
+	
+		@media(max-width:370px){
+		.skills-info h4{
+			font-size: 1.9rem;
+		}
+		.skills-info p{
+		    font-size: 1.18rem;
+		}
+	}
+	
+	
+		@media(max-width:367px){
+		.skills-info h4{
+			font-size: 1.8rem;
+		}
+		.skills-info p{
+		    font-size: 1.17rem;
+		}
+	}
+	
+	
+		@media(max-width:364px){
+		.skills-info h4{
+			font-size: 1.8rem;
+		}
+		.skills-info p{
+		    font-size: 1.15rem;
+		}
+	}
+	
+	
+		@media(max-width:360px){
+		.skills-info h4{
+			font-size: 1.8rem;
+		}
+		.skills-info p{
+		    font-size: 1.14rem;
+		}
+	}
+	
+	
+		@media(max-width:359px){
+		.skills-info h4{
+			font-size: 1.8rem;
+		}
+		.skills-info p{
+		    font-size: 1.14rem;
+		}
+	}
+	
+	
+		@media(max-width:353px){
+		.skills-info h4{
+			font-size: 1.8rem;
+		}
+		.skills-info p{
+		    font-size: 1.13rem;
+		}
+	}
+	
+	
+		@media(max-width:351px){
+		.skills-info h4{
+			font-size: 1.8rem;
+		}
+		.skills-info p{
+		    font-size: 1.11rem;
+		}
+	}
+	
+	
+		@media(max-width:347px){
+		.skills-info h4{
+			font-size: 1.78rem;
+		}
+		.skills-info p{
+		    font-size: 1.09rem;
+		}
+	}
+	
+	
+		@media(max-width:341px){
+		.skills-info h4{
+			font-size: 1.78rem;
+		}
+		.skills-info p{
+		    font-size: 1.07rem;
 		}
 	}
