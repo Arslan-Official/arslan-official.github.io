@@ -497,7 +497,16 @@ span{
 		margin-bottom: 3rem;
 		color: white;
 	}
-	.contact p{
+	.para2{
+		display: block;
+		font-size: 1.5rem;
+		color: white;
+		text-align: center;
+		padding-top: 10rem;
+		padding-bottom: 5rem;
+	}
+	.para3{
+		display: none;
 		font-size: 1.5rem;
 		color: white;
 		text-align: center;
@@ -1200,6 +1209,16 @@ span{
 	}
 	
 	
+	    @media(min-width:355px) and (max-width:521px){
+		.para3{
+		display:block;
+	    }
+		.para2{
+		display:none;
+		}
+	}
+		
+		
 		@media(max-width:353px){
 		.skills-info h4{
 			font-size: 1.8rem;
