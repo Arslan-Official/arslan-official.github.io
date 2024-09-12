@@ -196,7 +196,7 @@ span{
 	position: relative;
 }
 .text-animation span::before{
-	content: "Youtuber";
+	content: "CybSec Expert";
 	color: var(--main-color);
 	animation: words 20s infinite;
 }
