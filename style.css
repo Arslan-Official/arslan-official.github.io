@@ -222,19 +222,19 @@ span{
 	}
 	21%,
 	40%{
-		content: "AI Specialist";
+		content: "SOC Analyst";
 	}
 	41%,
 	60%{
-		content: "Content Creator";
+		content: "OffSec Specialist";
 	}
 	61%,
 	80%{
-		content: "Video Editor";
+		content: "Aspiring CISO";
 	}
 	81%,
 	100%{
-		content: "Freelancer";
+		content: "Content Creator";
 	}
 }
 @keyframes typing{
