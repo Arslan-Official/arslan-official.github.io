@@ -174,14 +174,69 @@ span{
 	display: flex;
 	align-items: center;
 	gap: 1.5rem;
+	position: relative;
 }
-.btn-group a:nth-of-type(2){
+
+.dropdown {
+	position: relative;
+}
+
+.dropdown-content a {
+    padding: 16px 16px;
+    text-decoration: none;
+    color: var(--main-color); /* Ensure links have the correct color even when hidden */
+    font-size: 1.5rem;
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    transition: 0.3s ease-in-out; /* Apply transition even when hidden */
+}
+
+.dropdown-content a:hover {
+    transform: scale(1.05);
+}
+
+.dropdown-content {
+    opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+    position: absolute;
+    background-color: black;
+    width: 100%;
+	border-radius: 1rem;
+    z-index: 1;
+	border: 2px solid var(--main-color);
+	box-shadow: 0 0 15px var(--main-color);
+	transition: opacity 0.3s ease-in-out, max-height 0.5s ease-in-out;
+}
+
+.dropdown-content.show {
+    opacity: 1;
+	max-height: 500px;
+}
+
+.dropdown-content.show a {
+	padding: 16px 16px;
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: 1.5rem;
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.dropdown-content.show a:hover{
+	transform: scale(1.05);
+}
+
+.contact-btn {
 	background-color: black;
 	color: var(--main-color);
 	border: 2px solid var(--main-color);
 	box-shadow: 0 0 25px transparent;
 }
-.btn-group a:nth-of-type(2):hover{
+.contact-btn:hover {
 	box-shadow: 0 0 25px var(--main-color);
 	background-color: var(--main-color);
 	color: black;
