@@ -277,19 +277,19 @@ span{
 	}
 	21%,
 	40%{
-		content: "SOC Analyst";
+		content: "OffSec Specialist";
 	}
 	41%,
 	60%{
-		content: "OffSec Specialist";
+		content: "SOC Analyst";
 	}
 	61%,
 	80%{
-		content: "Aspiring CISO";
+		content: "Security Consultant";
 	}
 	81%,
 	100%{
-		content: "Content Creator";
+		content: "Aspiring CISO";
 	}
 }
 @keyframes typing{
