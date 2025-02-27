@@ -202,7 +202,7 @@ span{
     overflow: visible;
 }
 .text-animation span::before{
-	content: "ＣＹＢ • Black Team ⎮ OffSec";
+	content: "ＣＹＢ • Black Team | OffSec";
 	color: var(--main-color);
 	animation: words 20s infinite;
 	white-space: nowrap;
