@@ -23,17 +23,3 @@ menuIcon.onclick = () => {
 	menuIcon.classList.toggle('bx-x');
 	navbar.classList.toggle('active');
 }
-
-const showcaseBtn = document.getElementById('showcase-btn');
-const dropdownContent = showcaseBtn.nextElementSibling; // Get the dropdown content
-
-showcaseBtn.addEventListener('click', () => {
-	dropdownContent.classList.toggle('show'); // Toggle the 'show' class
-});
-
-// Optional: Close the dropdown if clicking outside of it
-window.addEventListener('click', (event) => {
-	if (!showcaseBtn.contains(event.target) && !dropdownContent.contains(event.target)) {
-		dropdownContent.classList.remove('show');
-	}
-});
