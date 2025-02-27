@@ -20,6 +20,7 @@
 		    <a href="#home" class="active">Home</a>
 			<a href="#education">Education</a>
 			<a href="#skills">Skills</a>
+			<a href="#projects">Projects</a>
 			<a href="#contact">Contact</a>
 		</nav>
 	</header>
@@ -127,6 +128,53 @@
 <p class="para">You can click on a skill to view its credential</p>
 </section>
 
+<section class="projects" id="projects">
+  <h2 class="heading">Projects</h2>
+  <div class="projects-container">
+    <div class="project-box" data-gif="keylogger.gif" data-title="Obfuscated Keylogger">
+      <h3>Obfuscated Keylogger</h3>
+      <p>Crafted a custom keylogger with advanced obfuscation to bypass Windows Defender’s signature-based detection. Tested in a sandbox to explore evasion tactics and post-exploitation data collection.</p>
+    </div>
+    <div class="project-box" data-gif="rbackdoor.gif" data-title="Reverse Backdoor">
+      <h3>Reverse Backdoor</h3>
+      <p>Built a reverse backdoor prototype to study network persistence and C2 communication. Deployed in a controlled environment to simulate attacker behavior.</p>
+    </div>
+    <div class="project-box" data-gif="phishing.gif" data-title="Phishing Simulator">
+      <h3>Phishing Simulator</h3>
+      <p>Developed a lightweight phishing toolkit to mimic credential-harvesting attacks. Used HTML/CSS trickery and a Python backend to log dummy inputs.</p>
+    </div>
+    <!-- New Projects -->
+    <div class="project-box" data-gif="arpspoof.gif" data-title="Arp Spoofer & Detector">
+      <h3>Arp Spoofer & Detector</h3>
+      <p>Developed a tool to perform ARP spoofing and Man-in-the-Middle (MITM) attacks, allowing interception and manipulation of network traffic. The tool also includes ARP spoofing detection, enhancing network security through both offensive and defensive techniques.</p>
+    </div>
+    <div class="project-box" data-gif="networkscanner.gif" data-title="Network Scanner">
+      <h3>Network Scanner</h3>
+      <p>Created a network scanning tool to identify live hosts by detecting their IP and MAC addresses within the local network. This helps in network reconnaissance and security assessments by mapping accessible devices.</p>
+    </div>
+  </div>
+  <div class="project-nav">
+    <button class="nav-btn prev-btn">←</button>
+    <button class="nav-btn next-btn">→</button>
+  </div>
+  <div class="demo-btn-container">
+    <button class="btn demo-btn">Live Demo</button>
+  </div>
+</section>
+
+<!-- Modal Structure -->
+<div class="modal" id="project-modal">
+  <div class="modal-content">
+    <span class="close-btn">×</span>
+    <h3 id="modal-title"></h3>
+    <img id="modal-gif" src="" alt="Project Demo">
+    <div class="modal-nav">
+      <button class="nav-btn prev-btn">←</button>
+      <button class="nav-btn next-btn">→</button>
+    </div>
+  </div>
+</div>
+
 <section class="contact" id="contact">
 <h2 class="heading3">Contact <span>Me</span></h2>
 
@@ -177,6 +225,9 @@
 </li>
 <li>
 <a href="#skills">Skills</a>
+</li>
+<li>
+<a href="#projects">Projects</a>
 </li>
 <li>
 <a href="#contact">Contact</a>
