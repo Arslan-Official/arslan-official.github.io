@@ -34,7 +34,7 @@ const closeBtn = document.querySelector('.close-btn');
 const modalPrevBtn = document.querySelector('.modal-nav .prev-btn');
 const modalNextBtn = document.querySelector('.modal-nav .next-btn');
 const demoBtn = document.querySelector('.demo-btn');
-const loadingSpinner = document.querySelector('.loading-spinner'); // Reference to spinner
+const loadingSpinner = document.querySelector('.loading-spinner');
 const allProjectBoxes = document.querySelectorAll('.project-box');
 
 // Project data array
@@ -45,33 +45,41 @@ const projects = Array.from(allProjectBoxes).map(box => ({
 
 let currentProjectIndex = 0;
 
-// Update modal content with fade animation and loading spinner
+// Update modal content with proper spinner and error handling
 function updateModal(index) {
+  const project = projects[index];
+  
+  // Set title immediately
+  modalTitle.textContent = project.title;
+  
+  // Reset modal state
+  modalContent.classList.remove('fade-in');
   modalContent.classList.add('fade-out');
-  loadingSpinner.style.display = 'block';
   modalGif.style.display = 'none';
-  setTimeout(() => {
-    const project = projects[index];
-    const img = new Image();
-    img.onload = () => {
-      modalTitle.textContent = project.title; // Update title here
-      modalGif.src = project.gif;
-      modalGif.style.display = 'block';
-      loadingSpinner.style.display = 'none';
-      modalContent.classList.remove('fade-out');
-      modalContent.classList.add('fade-in');
-      setTimeout(() => modalContent.classList.remove('fade-in'), 300);
-    };
-    img.onerror = () => {
-      modalTitle.textContent = project.title; // Update title even on error
-      loadingSpinner.style.display = 'none';
-      modalGif.style.display = 'none';
-      modalContent.classList.remove('fade-out');
-      modalContent.classList.add('fade-in');
-      setTimeout(() => modalContent.classList.remove('fade-in'), 300);
-    };
-    img.src = project.gif;
-  }, 300);
+  loadingSpinner.style.display = 'block'; // Show spinner
+
+  const img = new Image();
+  
+  img.onload = () => {
+    // GIF loaded successfully
+    modalGif.src = project.gif;
+    modalGif.style.display = 'block';
+    loadingSpinner.style.display = 'none';
+    modalContent.classList.remove('fade-out');
+    modalContent.classList.add('fade-in');
+    setTimeout(() => modalContent.classList.remove('fade-in'), 300); // Fade-in duration
+  };
+  
+  img.onerror = () => {
+    // GIF failed to load
+    loadingSpinner.style.display = 'none';
+    modalTitle.textContent = `${project.title} - Failed to Load GIF`;
+    modalContent.classList.remove('fade-out');
+    modalContent.classList.add('fade-in');
+    setTimeout(() => modalContent.classList.remove('fade-in'), 300);
+  };
+  
+  img.src = project.gif; // Start loading the GIF
 }
 
 // Open modal with first project
