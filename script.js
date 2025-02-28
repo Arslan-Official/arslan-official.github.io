@@ -48,38 +48,44 @@ let currentProjectIndex = 0;
 // Update modal content with proper spinner and error handling
 function updateModal(index) {
   const project = projects[index];
-  
-  // Set title immediately
+
+  // Update title immediately
   modalTitle.textContent = project.title;
-  
-  // Reset modal state
-  modalContent.classList.remove('fade-in');
-  modalContent.classList.add('fade-out');
+
+  // Show spinner and reset GIF
+  loadingSpinner.style.display = 'block';
   modalGif.style.display = 'none';
-  loadingSpinner.style.display = 'block'; // Show spinner
+  modalContent.classList.remove('fade-in');
+  modalContent.classList.add('fade-out'); // Start with fade-out to reset
 
   const img = new Image();
-  
+
   img.onload = () => {
-    // GIF loaded successfully
+    console.log(`GIF loaded: ${project.gif}`);
     modalGif.src = project.gif;
     modalGif.style.display = 'block';
     loadingSpinner.style.display = 'none';
     modalContent.classList.remove('fade-out');
     modalContent.classList.add('fade-in');
-    setTimeout(() => modalContent.classList.remove('fade-in'), 300); // Fade-in duration
+    setTimeout(() => modalContent.classList.remove('fade-in'), 300);
   };
-  
+
   img.onerror = () => {
-    // GIF failed to load
+    console.error(`Failed to load GIF: ${project.gif}`);
     loadingSpinner.style.display = 'none';
-    modalTitle.textContent = `${project.title} - Failed to Load GIF`;
+    modalTitle.textContent = `${project.title} - Error Loading GIF`;
     modalContent.classList.remove('fade-out');
     modalContent.classList.add('fade-in');
     setTimeout(() => modalContent.classList.remove('fade-in'), 300);
   };
-  
-  img.src = project.gif; // Start loading the GIF
+
+  // Start loading the GIF and handle immediate failure
+  img.src = project.gif;
+  if (!img.complete) {
+    console.log(`Loading started for: ${project.gif}`);
+  } else if (img.naturalWidth === 0) {
+    img.onerror(); // Trigger error if image is invalid
+  }
 }
 
 // Open modal with first project
@@ -113,7 +119,7 @@ modal.addEventListener('click', (e) => {
   }
 });
 
-// Project navigation
+// Project navigation (unchanged)
 document.addEventListener('DOMContentLoaded', () => {
   const projectsContainer = document.querySelector('.projects-container');
   const allProjectBoxes = document.querySelectorAll('.project-box');
@@ -124,25 +130,19 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentSet = 0;
 
   function updateProjects() {
-    // Clear current boxes
     projectsContainer.innerHTML = '';
-
-    // Determine start and end indices
     const start = currentSet * projectsPerPage;
     const end = Math.min(start + projectsPerPage, totalProjects);
     const activeCount = end - start;
 
-    // Clone and append only the current set
     for (let i = start; i < end; i++) {
       const box = allProjectBoxes[i].cloneNode(true);
       projectsContainer.appendChild(box);
     }
 
-    // Adjust classes based on active count
     projectsContainer.classList.toggle('two-boxes', activeCount === 2);
     projectsContainer.classList.toggle('three-boxes', activeCount === 3);
 
-    // Toggle arrow visibility
     prevBtn.classList.toggle('disabled', currentSet === 0);
     nextBtn.classList.toggle('disabled', end >= totalProjects);
   }
@@ -154,13 +154,12 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSet = newSet;
         updateProjects();
         projectsContainer.classList.remove('fading');
-      }, 500); // Matches transition duration
+      }, 500);
     }
   }
 
   prevBtn.addEventListener('click', () => changeSet(currentSet - 1));
   nextBtn.addEventListener('click', () => changeSet(currentSet + 1));
 
-  // Initial setup
   updateProjects();
 });
