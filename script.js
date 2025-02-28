@@ -49,43 +49,33 @@ let currentProjectIndex = 0;
 function updateModal(index) {
   const project = projects[index];
 
+  // Reset modal content
+  modalGif.classList.remove('loaded'); // Remove loaded class to hide GIF
+  loadingSpinner.style.opacity = '1'; // Show spinner
+  modalGif.style.display = 'none'; // Hide GIF initially
+
   // Update title immediately
   modalTitle.textContent = project.title;
 
-  // Show spinner and reset GIF
-  loadingSpinner.style.display = 'block';
-  modalGif.style.display = 'none';
-  modalContent.classList.remove('fade-in');
-  modalContent.classList.add('fade-out'); // Start with fade-out to reset
-
+  // Load the GIF
   const img = new Image();
+  img.src = project.gif;
 
   img.onload = () => {
     console.log(`GIF loaded: ${project.gif}`);
-    modalGif.src = project.gif;
-    modalGif.style.display = 'block';
-    loadingSpinner.style.display = 'none';
-    modalContent.classList.remove('fade-out');
-    modalContent.classList.add('fade-in');
-    setTimeout(() => modalContent.classList.remove('fade-in'), 300);
+    modalGif.src = project.gif; // Set the GIF source
+    modalGif.style.display = 'block'; // Show the GIF container
+    loadingSpinner.style.opacity = '0'; // Fade out the spinner
+    setTimeout(() => {
+      modalGif.classList.add('loaded'); // Fade in the GIF
+    }, 300); // Short delay for smooth transition
   };
 
   img.onerror = () => {
     console.error(`Failed to load GIF: ${project.gif}`);
-    loadingSpinner.style.display = 'none';
-    modalTitle.textContent = `${project.title} - Error Loading GIF`;
-    modalContent.classList.remove('fade-out');
-    modalContent.classList.add('fade-in');
-    setTimeout(() => modalContent.classList.remove('fade-in'), 300);
+    loadingSpinner.style.opacity = '0'; // Hide spinner on error
+    modalTitle.textContent = `${project.title} - Error Loading GIF`; // Show error message
   };
-
-  // Start loading the GIF and handle immediate failure
-  img.src = project.gif;
-  if (!img.complete) {
-    console.log(`Loading started for: ${project.gif}`);
-  } else if (img.naturalWidth === 0) {
-    img.onerror(); // Trigger error if image is invalid
-  }
 }
 
 // Open modal with first project
