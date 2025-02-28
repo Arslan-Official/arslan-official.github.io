@@ -27,13 +27,14 @@ menuIcon.onclick = () => {
 
 // Modal elements
 const modal = document.getElementById('project-modal');
-const modalContent = document.querySelector('.modal-content'); // Reference to modal content
+const modalContent = document.querySelector('.modal-content');
 const modalGif = document.getElementById('modal-gif');
 const modalTitle = document.getElementById('modal-title');
 const closeBtn = document.querySelector('.close-btn');
 const modalPrevBtn = document.querySelector('.modal-nav .prev-btn');
 const modalNextBtn = document.querySelector('.modal-nav .next-btn');
 const demoBtn = document.querySelector('.demo-btn');
+const loadingSpinner = document.querySelector('.loading-spinner'); // Reference to spinner
 const allProjectBoxes = document.querySelectorAll('.project-box');
 
 // Project data array
@@ -44,17 +45,33 @@ const projects = Array.from(allProjectBoxes).map(box => ({
 
 let currentProjectIndex = 0;
 
-// Update modal content with fade animation
+// Update modal content with fade animation and loading spinner
 function updateModal(index) {
   modalContent.classList.add('fade-out');
+  loadingSpinner.style.display = 'block';
+  modalGif.style.display = 'none';
   setTimeout(() => {
     const project = projects[index];
-    modalTitle.textContent = project.title;
-    modalGif.src = project.gif; // Update after fade-out
-    modalContent.classList.remove('fade-out');
-    modalContent.classList.add('fade-in');
-    setTimeout(() => modalContent.classList.remove('fade-in'), 300); // Remove fade-in after transition
-  }, 300); // Match the 0.3s transition duration
+    const img = new Image();
+    img.onload = () => {
+      modalTitle.textContent = project.title; // Update title here
+      modalGif.src = project.gif;
+      modalGif.style.display = 'block';
+      loadingSpinner.style.display = 'none';
+      modalContent.classList.remove('fade-out');
+      modalContent.classList.add('fade-in');
+      setTimeout(() => modalContent.classList.remove('fade-in'), 300);
+    };
+    img.onerror = () => {
+      modalTitle.textContent = project.title; // Update title even on error
+      loadingSpinner.style.display = 'none';
+      modalGif.style.display = 'none';
+      modalContent.classList.remove('fade-out');
+      modalContent.classList.add('fade-in');
+      setTimeout(() => modalContent.classList.remove('fade-in'), 300);
+    };
+    img.src = project.gif;
+  }, 300);
 }
 
 // Open modal with first project
