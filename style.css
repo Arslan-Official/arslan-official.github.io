@@ -646,11 +646,24 @@ span{
 }
 
 .modal-content.fade-out {
-  opacity: 0;
+  opacity: 1; /* Keep modal content visible */
+  transition: opacity 0.3s ease-in-out;
 }
 
 .modal-content.fade-in {
+  opacity: 1; /* Ensure full visibility */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* New class for GIF fade */
+#modal-gif.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#modal-gif.fade-in {
   opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 	.modal-content h3 {
