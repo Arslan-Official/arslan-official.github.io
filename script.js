@@ -24,6 +24,16 @@ menuIcon.onclick = () => {
 	navbar.classList.toggle('active');
 }
 
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (navbar.classList.contains('active') &&
+      !e.target.closest('.navbar') && 
+      !e.target.closest('#menu-icon')) {
+    navbar.classList.remove('active');
+    menuIcon.classList.remove('bx-x');
+  }
+});
+
 
 // Modal elements
 const modal = document.getElementById('project-modal');
