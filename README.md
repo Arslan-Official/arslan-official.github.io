@@ -9,8 +9,9 @@ index.html      portfolio
 nasa/           verification page for the NASA VDP findings (linked from the resume)
 style.css       single stylesheet for both pages
 script.js       hero graph, reveals, viewer, navigation
-assets/         certificate and proof images
-Profile.jpg     portrait
+assets/         full-resolution proof images (opened in the viewer)
+assets/thumbs/  small versions the page loads up front
+Profile.webp    portrait
 favicon.png
 Muhammad_Arsalan_Qureshi_Resume.pdf
 ```
@@ -29,21 +30,22 @@ The resume PDF links to the NASA page, so that path must stay as-is.
 The demo GIFs are ~15 MB and are no longer referenced:
 `keylogger.gif`, `rbackdoor.gif`, `phishing.gif`, `arpspoof.gif`, `networkscanner.gif`
 
-## Assets in place
+## Assets
 
-| File | Shown on |
-|---|---|
-| `cert-cpts.jpg` | Credentials |
-| `cert-synack.jpg` | Credentials |
-| `cert-cnsp.jpg` | Credentials |
-| `cert-google.jpg` | Credentials |
-| `cert-pso.jpg` | Credentials |
-| `nasa-p1-lor.jpg`, `nasa-p2-lor.jpg` | Record + NASA page |
-| `nasa-hall-of-fame.jpg` | Record + NASA page |
-| `nasa-p1-crowdstream.jpg`, `nasa-p2-crowdstream.jpg` | NASA page |
+Everything is WebP, in two sizes:
 
-All resized and recompressed; the whole `assets/` folder is about 1.3 MB.
-To swap one, keep the filename and the page picks it up.
+| Folder | Width | Used for |
+|---|---|---|
+| `assets/thumbs/` | 340–760 px | what the page actually loads |
+| `assets/` | 1200–1500 px | full resolution, fetched only when a document is opened |
+
+The page loads the thumbnails; clicking a certificate or letter pulls the
+full-size file on demand. On a 390 px phone the whole page is about **308 KB**
+(it was 1565 KB with single-size JPEGs).
+
+To swap an image, replace both the `assets/` and `assets/thumbs/` copy, keeping
+the filename, and update the `width`/`height` attributes on that `<img>` if the
+proportions change.
 
 ## Notes on the build
 
@@ -52,3 +54,5 @@ To swap one, keep the filename and the page picks it up.
   blocked, the page renders fully rather than blank.
 - `prefers-reduced-motion` turns off the hero canvas, reveals, tilt and pulses.
 - The hero canvas pauses when scrolled out of view or when the tab is hidden.
+- Every `<img>` carries `width`/`height`, so nothing reflows while images load.
+- WebP only. Supported by every browser since 2020; there is no JPEG fallback.

@@ -11,7 +11,8 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="Profile.webp">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -68,7 +69,7 @@
 
     <figure class="portrait fade" data-d="300">
       <div class="portrait-frame">
-        <img src="Profile.jpg" alt="Portrait of Muhammad Arsalan Qureshi">
+        <img src="Profile.webp" width="800" height="827" alt="Portrait of Muhammad Arsalan Qureshi" fetchpriority="high" decoding="async">
       </div>
       <figcaption>
         <span class="mono">unlitshadow</span>
@@ -120,16 +121,16 @@
       </div>
       <div class="entry-proof">
         <div class="docs">
-          <button class="doc tilt" data-src="assets/nasa-p1-lor.jpg" data-caption="NASA letter of recognition — P1 critical finding, 3 November 2026">
-            <span class="doc-img"><img src="assets/nasa-p1-lor.jpg" alt="" loading="lazy"></span>
+          <button class="doc tilt" data-src="assets/nasa-p1-lor.webp" data-caption="NASA letter of recognition — P1 critical finding, 3 November 2026">
+            <span class="doc-img"><img src="assets/thumbs/nasa-p1-lor.webp" width="340" height="440" alt="" loading="lazy" decoding="async"></span>
             <span class="doc-cap">Letter, P1</span>
           </button>
-          <button class="doc tilt" data-src="assets/nasa-p2-lor.jpg" data-caption="NASA letter of recognition — P2 high finding, 5 November 2026">
-            <span class="doc-img"><img src="assets/nasa-p2-lor.jpg" alt="" loading="lazy"></span>
+          <button class="doc tilt" data-src="assets/nasa-p2-lor.webp" data-caption="NASA letter of recognition — P2 high finding, 5 November 2026">
+            <span class="doc-img"><img src="assets/thumbs/nasa-p2-lor.webp" width="340" height="440" alt="" loading="lazy" decoding="async"></span>
             <span class="doc-cap">Letter, P2</span>
           </button>
-          <button class="doc tilt" data-src="assets/nasa-hall-of-fame.jpg" data-caption="NASA VDP Hall of Fame listing on Bugcrowd, showing the handle unlitshadow">
-            <span class="doc-img"><img src="assets/nasa-hall-of-fame.jpg" alt="" loading="lazy"></span>
+          <button class="doc tilt" data-src="assets/nasa-hall-of-fame.webp" data-caption="NASA VDP Hall of Fame listing on Bugcrowd, showing the handle unlitshadow">
+            <span class="doc-img"><img src="assets/thumbs/nasa-hall-of-fame.webp" width="340" height="178" alt="" loading="lazy" decoding="async"></span>
             <span class="doc-cap">Hall of Fame</span>
           </button>
         </div>
@@ -225,8 +226,8 @@
     </header>
 
     <div class="gallery" id="gallery">
-      <figure class="card tilt reveal" tabindex="0" role="button" data-src="assets/cert-cpts.jpg" data-caption="HTB Certified Penetration Testing Specialist — earned 30 June 2026">
-        <span class="card-img"><img src="assets/cert-cpts.jpg" alt="HTB Certified Penetration Testing Specialist certificate" loading="lazy"></span>
+      <figure class="card tilt reveal" tabindex="0" role="button" data-src="assets/cert-cpts.webp" data-caption="HTB Certified Penetration Testing Specialist — earned 30 June 2026">
+        <span class="card-img"><img src="assets/thumbs/cert-cpts.webp" width="760" height="537" alt="HTB Certified Penetration Testing Specialist certificate" loading="lazy" decoding="async"></span>
         <figcaption class="card-body">
           <h3>Certified Penetration Testing Specialist</h3>
           <p class="card-issuer">Hack The Box <span class="mono">30 Jun 2026</span></p>
@@ -235,8 +236,8 @@
         </figcaption>
       </figure>
 
-      <figure class="card tilt reveal" tabindex="0" role="button" data-src="assets/cert-synack.jpg" data-caption="Synack Red Team onboarding completion — 19 September 2026">
-        <span class="card-img"><img src="assets/cert-synack.jpg" alt="Synack Red Team onboarding certificate" loading="lazy"></span>
+      <figure class="card tilt reveal" tabindex="0" role="button" data-src="assets/cert-synack.webp" data-caption="Synack Red Team onboarding completion — 19 September 2026">
+        <span class="card-img"><img src="assets/thumbs/cert-synack.webp" width="760" height="537" alt="Synack Red Team onboarding certificate" loading="lazy" decoding="async"></span>
         <figcaption class="card-body">
           <h3>Synack Red Team</h3>
           <p class="card-issuer">Synack <span class="mono">19 Sept 2026</span></p>
@@ -244,8 +245,8 @@
         </figcaption>
       </figure>
 
-      <figure class="card tilt reveal" tabindex="0" role="button" data-src="assets/cert-cnsp.jpg" data-caption="Certified Network Security Practitioner — The SecOps Group, 2 December 2025">
-        <span class="card-img"><img src="assets/cert-cnsp.jpg" alt="Certified Network Security Practitioner certificate" loading="lazy"></span>
+      <figure class="card tilt reveal" tabindex="0" role="button" data-src="assets/cert-cnsp.webp" data-caption="Certified Network Security Practitioner — The SecOps Group, 2 December 2025">
+        <span class="card-img"><img src="assets/thumbs/cert-cnsp.webp" width="760" height="537" alt="Certified Network Security Practitioner certificate" loading="lazy" decoding="async"></span>
         <figcaption class="card-body">
           <h3>Certified Network Security Practitioner</h3>
           <p class="card-issuer">The SecOps Group <span class="mono">02 Dec 2025</span></p>
@@ -254,8 +255,8 @@
         </figcaption>
       </figure>
 
-      <figure class="card tilt reveal" tabindex="0" role="button" data-src="assets/cert-google.jpg" data-caption="Google Cybersecurity Professional Certificate — 17 August 2024">
-        <span class="card-img"><img src="assets/cert-google.jpg" alt="Google Cybersecurity Professional Certificate" loading="lazy"></span>
+      <figure class="card tilt reveal" tabindex="0" role="button" data-src="assets/cert-google.webp" data-caption="Google Cybersecurity Professional Certificate — 17 August 2024">
+        <span class="card-img"><img src="assets/thumbs/cert-google.webp" width="760" height="587" alt="Google Cybersecurity Professional Certificate" loading="lazy" decoding="async"></span>
         <figcaption class="card-body">
           <h3>Google Cybersecurity Professional Certificate</h3>
           <p class="card-issuer">Google, via Coursera <span class="mono">17 Aug 2024</span></p>
@@ -264,8 +265,8 @@
         </figcaption>
       </figure>
 
-      <figure class="card tilt reveal" tabindex="0" role="button" data-src="assets/cert-pso.jpg" data-caption="Pakistan State Oil — certificate of internship, August 2026">
-        <span class="card-img"><img src="assets/cert-pso.jpg" alt="Pakistan State Oil certificate of internship" loading="lazy"></span>
+      <figure class="card tilt reveal" tabindex="0" role="button" data-src="assets/cert-pso.webp" data-caption="Pakistan State Oil — certificate of internship, August 2026">
+        <span class="card-img"><img src="assets/thumbs/cert-pso.webp" width="760" height="572" alt="Pakistan State Oil certificate of internship" loading="lazy" decoding="async"></span>
         <figcaption class="card-body">
           <h3>Certificate of Internship</h3>
           <p class="card-issuer">Pakistan State Oil <span class="mono">Aug 2026</span></p>
